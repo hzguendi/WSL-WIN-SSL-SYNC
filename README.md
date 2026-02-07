@@ -29,14 +29,29 @@ This project is licensed under the **Apache 2.0 License**.
 ## Usage
 Run the script with appropriate arguments:
 ```sh
-WIP
+./cert-wsl.sh [options]
 ```
 
 ### Arguments
-WIP
+* -u Update certificates from Windows to WSL
+* -t Test
+* -n Dry-Run: List certificates from Windows
+* -r Reset
+* -d Debug
+* -v Verbose
+* -h Print help
 
 ### Examples
-WIP
+
+List certificates, do not change anything:
+```sh
+./cert-wsl.sh -u
+```
+
+Clear target folder on WSL, then copy certificates from Windows to WSL:
+```sh
+./cert-wsl.sh -u
+```
 
 ## Debugging
 To debug, you can check the extracted certificates and validate them with OpenSSL:
