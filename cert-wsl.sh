@@ -222,7 +222,7 @@ reset_wsl_certs() {
 # Argument Parsing
 # ============================
 
-while getopts "ut:n:dvhr" opt; do
+while getopts "ut:ndvhr" opt; do
     case "$opt" in
         u) ACTION="update" ;;
         t) ACTION="test"; DOMAIN="$OPTARG" ;;
@@ -238,12 +238,6 @@ done
 # ============================
 # Main Execution Logic
 # ============================
-
-if [ -z "$ACTION" ]; then
-    log ERROR "No action specified."
-    print_help
-    exit 1
-fi
 
 if [ "$ACTION" = "update" ]; then
     if [ "$RESET_CERTS" = true ]; then
